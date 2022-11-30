@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>awake()、start() 和 update() —— LSL01 GTTH</title>
+    <link rel="stylesheet" href="css\main.css">
+    <script type="text/javascript" src="Game_JS\like.js"></script>
+    <script type="text/javascript" src="Game_JS\sideBar.js"></script>
+</head>
+
+<body>
+    <img id="logo" src="images\logo.png">
+    <nav>
+        <ul>
+            <li><a href="#">名人堂</a></li>
+            <li><a href="#">我的项目和推荐</a></li>
+            <li><a href="#">开发与流程</a></li>
+            <li><a href="index.html">首页</a></li>
+        </ul>
+    </nav>
+    <div id="contect">
+        <div id="sideBarLeft">
+            <div class="pan">
+                <ul>
+                    <li><a href="A-What-is-Digital-Game.html">什么是电子游戏？</a></li>
+                    <li>
+                        常用的开发工具
+                        <ul>
+                            <li><a href="A-Introducing-Unity.html">Unity</a></li>
+                            <li><a href="A-introducing-VS2022.html">Visual Studio 2022</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>基本的开发技术</b>
+                        <ul>
+                            <li><b>awake、start 和 update 方法</b></li>
+                            <li><a href="A-Object-Move.html">操控人物移动</a></li>
+                            <li><a href="#">刚体与碰撞</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="word">
+            <h1>awake()、start() 和 update()</h1>
+            <h5>游戏脚本中常用的三个重要函数，它们分别是干嘛的呢？</h5>
+            <hr>
+            <p>在进行实际开发时，相信诸位都在脚本文件中看过这三个函数（其中start()和update()是默认会生成的，应该是每次都会见到）。那么，这三个家伙是干嘛的呢？</p>
+            <p>我们先介绍start()函数</p>
+            <p>顾名思义，“开始”，这个函数是每次脚本被加载时都会被调用一次的函数，也就是说，我们可以用它来进行一些初始化的操作，比如规定角色的初始位置、存档的读取等，注意：它在脚本的运行周期中只会被调用一次，在开始的时候。</p>
+            <p>至于Update，则是在游戏执行过程中，脚本的运行周期里，被不停反复地调用，你可以把它类比为一个放在循环语句里的函数，它所执行的工作是整个游戏中最多，也是最为重要的，比如人物的移动、物品的移动、场景变化、镜头转移等的代码都要写到此函数中。</p>
+            <p>你会想，这不过就是一个循环语句而已嘛，多简单呐！但对于这个函数，我们要深入探讨的，是它的执行间隔。</p>
+            <p>所谓执行间隔，也就是这个函数每执行两次所间隔的时间，用一个大家都听过的词“帧率”，你们应该就能更明白了。是的，Update函数每次执行间隔的时间，就是所谓的“一帧”。</p>
+            <p>大家通常说的“游戏好卡呀，游戏掉帧了。”，其实就是因为电脑卡顿，导致执行Update函数的间隔增加了，游戏的属性无法及时更新，就造成了我们肉眼和体验上所见的“卡顿”。</p>
+            <p>而这个游戏帧率的多少，取决于你设备的性能，包括CPU、显卡、内存等，性能越好，运行不卡顿，自然也就不会“掉帧”了，</p>
+            <p>通常的手机游戏帧率一般在30fps，也就是一秒执行30次update函数。而电脑游戏则在60fps。</p>
+            <br>
+            <img src="images\A\A4_01.jpg">
+            <br>
+            <p>那么有什么办法可以固定帧率的吗？可惜，目前我们是无法完全没有一点误差地设置一个游戏的运行帧率的，不过，可以借用诸如FixedUpdate()函数等方法使得游戏的运行帧率尽量接近某一个值。</p>
+            <p>至于最后的awake()函数，它其实与Update()的本质是差不多的，都是在脚本被加载时先执行一遍，不过awake函数比start更高级，也就是会最先执行awake函数，随后再执行start。</p>
+            <p>整套流程下来，执行的顺序是这样的 awake() -> start() -> update()</p>
+            <p>当然，这三个只是最基本最常用的函数，还有许多不同的函数在游戏执行中发挥着不同的作用，这些，就留待大家自行发掘了。</p>
+            <br>
+            <a href="A-Object-Move.html"> 》》下一节 </a>
+        </div>
+        <div id="sideBarRight">
+            <div class="pan">
+                <div id="likeButton">
+                    <img id="likeImg" src="images\A\like.png" onclick="liked()">
+                </div>
+                <div id="debugButton">
+                    <a href="#debugpostion"><img src="images\A\debug.png"></a>
+                </div>
+            </div>
+        </div>
+        <div id="wordEnd">
+            <a name="debugpostion"></a>
+            <form>
+                有什么想和我们反馈的吗？
+                <br>
+                <textarea>在这里写下反馈</textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
+        <br>
+        <div class="picturesLink">
+            <p>图片来源：</p>
+            <p>图片：https://www.yuankusucai.com/117940.html</p>
+            <p>图标-Like：https://www.iconfont.cn/search/index?searchType=icon&q=%E7%82%B9%E8%B5%9E</p>
+            <p>图标-Debug：https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA&page=2&fromCollection=1&fills=&tag=
+            </p>
+        </div>
+        <br>
+        <p>&copy LSL01</p>
+    </footer>
+</body>
+
+</html>

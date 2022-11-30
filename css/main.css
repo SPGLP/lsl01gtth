@@ -1,0 +1,159 @@
+*{
+    margin:0 auto;
+}
+body{
+    background-color: rgb(145, 145, 255);
+}
+#logo{
+    float: left;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+nav{
+    float: left;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 255, 0.7);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+nav li{
+    list-style: none;
+    float: right;
+    width: 15%;
+    text-align: center;
+    display: block;
+}
+nav li :hover{
+    background-color: rgb(90, 90, 255);
+}
+nav li a{
+    color:white;
+    text-decoration: none;
+    font-style: normal;
+    display: block;
+    height: 64px;
+    line-height: 64px;
+}
+#contect{
+    position: relative;
+}
+#sideBarLeft{
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background:rgba(255, 255, 255, 0.8);
+    height: 2790px;
+    width: 20%;
+}
+#sideBarLeft li{
+    list-style: none;
+    margin-top: 10px;
+    line-height: 20px;
+}
+#sideBarLeft li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+#sideBarLeft li :hover{
+    text-decoration: none;
+    color: black;
+    /*background-color: cornflowerblue;*/
+    animation: meunSelect 0.8s ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes meunSelect {
+    form {
+        background-color:white;
+    }
+    to {
+        background-color: cornflowerblue;
+    }
+}
+#word{
+    background-color: white;
+    /*position: absolute;*/
+    padding: 20px;
+    margin-top: 70px;
+    margin-left: 21%;
+    box-shadow: 0px 5px 5px rgb(120, 120, 120);
+    border-radius: 10px;
+    width: 69%;
+}
+#word p{
+    margin-top: 30px;
+}
+#word img{
+    border: 3px double rgb(81, 0, 255);
+}
+#word a{
+    display: block;
+    margin-top:20px;
+    color: goldenrod;
+    text-decoration: none;
+}
+h5{
+    color: rgb(145, 100, 174);
+}
+hr{
+    margin: 20px;
+    width: 60%;
+}
+#sideBarRight{
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 64px;
+    height: 2790px;
+    background:rgba(255, 255, 255, 0.8);
+}
+#likeButton, #debugButton{
+    height: 64px;
+    width: 64px;
+}
+.pan{
+    margin:0;
+    position: fixed;
+}
+#sideBarRight .pan{
+    width: auto;
+}
+#sideBarLeft .pan{
+    width: 20%;
+}
+
+#wordEnd{
+    background-color: white;
+    /*position: absolute;*/
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 21%;
+    box-shadow: 0px 5px 5px rgb(120, 120, 120);
+    border-radius: 10px;
+    width: 69%;
+}
+#wordEnd form *{
+    margin-top: 30px;
+}
+#wordEnd form textarea{
+    width: 600px;
+    height: 100px;
+}
+footer{
+    background-color: darkcyan;
+    color:white;
+    margin-top: 30px;
+}
+.picturesLink{
+    color:rgb(0 208 208);
+}
+code {
+    background-color: black;
+    color:white;
+    display:block;
+    padding: 10px;
+}

@@ -1,0 +1,234 @@
+*{
+    margin:0 auto;
+}
+#headPicture{
+    background-image: url("..\\images\\headpicture.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+nav{
+    background-color: blue;
+    width: 100%;
+    height: 3em;
+}
+nav li{
+    list-style: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    display: block;
+}
+nav li :hover{
+    background-color: rgb(90, 90, 255);
+}
+nav li a{
+    color:white;
+    text-decoration: none;
+    font-style: normal;
+    display: block;
+    height: 3em;
+    line-height: 3em;
+}
+#contect{
+    background: url("..\\images\\contectBG.jpg");
+    width: 100%;
+    height: 20em;
+    margin-top: 3em;
+}
+.subC{
+    width: 100%;
+    height: 20em;
+    backdrop-filter: brightness(60%);
+}
+.news{
+    border: 3px rgb(0, 119, 255) solid ;
+    margin-left: 10%;
+    height: 10em;
+    background-color: rgba(0, 119, 255, 0.7);
+}
+.news a{
+    text-decoration: none;
+    color:white;
+}
+.news li :hover{
+    color:brown;
+    background-color: rgba(240, 255, 0, 0.75);
+}
+.newsP{
+    position: relative;
+    text-align: center;
+    font-family: "STHupo";
+    color:rgb(166, 0, 199);
+    font-style:oblique;
+    text-shadow: 0px 0px 5px rgb(0, 0, 177);
+    font-size: larger;
+}
+.announcement{
+    border: 3px rgb(20, 212, 0) solid;
+    margin-left: 8%;
+    height: 10em;
+    background-color: rgba(20, 212, 0, 0.7);
+}
+.announcement a{
+    text-decoration: none;
+    color:white;
+}
+.announcement li :hover{
+    color:black;
+    background-color: turquoise;
+    
+}
+.announcementP{
+    position: relative;
+    text-align: center;
+    font-family: "STHupo";
+    color:rgb(236, 240, 0);
+    font-style:oblique;
+    text-shadow: 0px 0px 5px rgb(0, 188, 28);
+    font-size: larger;
+}
+.news, .announcement{
+    width: 35%;
+    padding: 10px;
+    float: left;
+    margin-top: 5em;
+    color:white;
+}
+#gameSpan{
+    width: 100%;
+    height: 320px;
+    border: 3px red solid;
+    background-image: url("..\\images\\gameSpanImg.jpg");
+}
+#scoreboard{
+    float: right;
+    color: chocolate;
+    font-size: large;
+    font-family: "Microsoft YaHei";
+}
+#TG{
+    position: absolute;
+    z-index: 1;
+}
+#TGImg{
+    height: 5em;
+    width: 5em;
+}
+#ZhinSoup{
+    position: absolute;
+    z-index: 2;
+    margin-top: 0;
+    display: none;
+}
+#ZhinSoupImg{
+    height: 35px;
+    width: 50px;
+}
+#cxk{
+    margin-top: 15em;
+    position: absolute;
+    z-index: 1;
+}
+#cxkImg{
+    height: 5em;
+    width: 5em;
+}
+h2{
+    font-family: "KaiTi";
+    color:gold;
+    text-align: center;
+    align-self: center;
+}
+.gamesSample{
+    overflow: scroll;
+    height: 500px;
+    width: 100%;
+}
+#weblink{
+    height: 100px;
+    width: 100%;
+}
+.linkButton{
+    float: left;
+    height: 100px;
+    width: 20%;
+}
+.linkPad{
+    position: relative;
+    text-align: center;
+    display: none;
+    margin-top: -30px;
+}
+#bgmPan{
+    text-align: center;
+    width: 100%;
+}
+footer{
+    background-color: darkcyan;
+    color:white;
+}
+.picturesLink{
+    color:rgb(0 208 208);
+}
+#meun1, #meun2, #meun3{
+    position:absolute;
+    width: 100%;
+    height: 0px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    display:none;
+    animation: mshow 0.5s ease-out;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+@keyframes mshow {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 200px;
+    }
+}
+
+#meun1 li, #meun2 li, #meun3 li{
+    list-style: none;
+    display: block;
+    font-size: large;
+}
+#meun1 li{
+    height: 50px;
+    line-height: 50px;
+}
+#meun2 li{
+    height: 40px;
+    line-height: 40px;
+}
+#meun3 li{
+    height: 50px;
+    line-height: 50px;
+}
+#meun1 li a, #meun2 li a, #meun3 li a{
+    color:black;
+    text-decoration: none;
+}
+#meun1 li :hover, #meun2 li :hover, #meun3 li :hover{
+    display: block;
+    text-decoration: none;
+    font-size: large;
+    animation: meunSelect 0.8s ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes meunSelect {
+    form {
+        width: 0;
+        background-color:#3bd1ff;
+    }
+    to {
+        width: 100%;
+        background-color: #3bd1ff;
+    }
+}

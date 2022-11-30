@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <title>控制人物的移动 —— LSL01 GTTH</title>
+    <link rel="stylesheet" href="css\main.css">
+    <script type="text/javascript" src="Game_JS\like.js"></script>
+    <script type="text/javascript" src="Game_JS\sideBar.js"></script>
+</head>
+
+<body>
+    <img id="logo" src="images\logo.png">
+    <nav>
+        <ul>
+            <li><a href="#">名人堂</a></li>
+            <li><a href="#">我的项目和推荐</a></li>
+            <li><a href="#">开发与流程</a></li>
+            <li><a href="index.html">首页</a></li>
+        </ul>
+    </nav>
+    <div id="contect">
+        <div id="sideBarLeft">
+            <div class="pan">
+                <ul>
+                    <li><a href="A-What-is-Digital-Game.html">什么是电子游戏？</a></li>
+                    <li>
+                        常用的开发工具
+                        <ul>
+                            <li><a href="A-Introducing-Unity.html">Unity</a></li>
+                            <li><a href="A-introducing-VS2022.html">Visual Studio 2022</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>基本的开发技术</b>
+                        <ul>
+                            <li><a href="A-basic-function.html"></a>awake、start 和 update 方法</b></li>
+                            <li><a href="#">操控人物移动</a></li>
+                            <li><a href="#">刚体与碰撞</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="word">
+            <h1>控制人物的移动</h1>
+            <h5>大家运动起来了，这个世界就有活力了</h5>
+            <hr>
+            <p>关于物体的运动，方法有很多。</p>
+            <p>但在开始前，我们都必须要在脚本中声明一些object变量，并在稍后的函数，或者在Unity中对它进行赋值，将该变量与我们所需要操控的物品们进行绑定。</p>
+            <p>完成上述工作后，我们就可以编写我们移动物品的逻辑了。</p>
+            <p><b>1. 通过Transform组件移动物体。</b>组件用于描述物体在空间中的状态，它包括 位置(position)， 旋转(rotation)和 缩放(scale)。 其实所有的移动都会导致position的改变，这里所说的通过Transform组件来移动物体，指的是直接操作Transform来控制物体的位置(position)。</p>
+            <p>通过Transform.Position组件移动物体，代码如下：</p>
+            <p><code>transform.position += Vector3.forward * Time.deltaTime;</code></p>
+            <p>transform.Translate方法可以将物体从当前位置，移动到指定位置，并且可以选择参照的坐标系。 当需要进行坐标系转换时，可以考虑使用该方法以省去转换坐标系的步骤。代码如下：</p>
+            <p><code>transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime);  </code></p>
+            <p>Vector3.Lerp ,  Vector3.Slerp , Vector3.MoveTowards。Vector3 既可以表示三维空间中的一个点，也可以表示一个向量。这三个方法均为插值方法， Lerp为线性插值，Slerp为球形插值， MoveTowards在Lerp的基础上增加了限制最大速度功能。 当需要从指定A(Cube)点移动到B(Cube1)点时,可以考虑时候这些方法。代码如下：</p>
+            <br>
+            <pre><code>
+//物体从A点到B点的线性插值范围在（0，0.5f）之间，最大为0.5f
+transform.position= Vector3.Lerp(transform.position, B.position, 0.5f);
+
+//球形插值t的值在[0,0.5]
+transform.position= Vector3.Slerp(transform.position, B.position, 0.5f);
+
+//相对于lerp,MoveTowards增加了一个移动的最大值
+transform.position = Vector3.MoveTowards(transform.position, B.position, 0.5f);
+            </code></pre>
+            <p>Vector3.SmoothDamp。该方法是可以平滑的从A逐渐移动到B点，并且可以控制速度，最常见的用法是相机跟随目标。代码如下：</p>
+            <pre><code>
+//平滑地移动摄像机朝向目标位置  
+transform.position = Vector3.SmoothDamp(transform.position, targetPosition, velocity, smoothTime);
+            </code></pre>
+            <br>
+            <img src="images\A\A5_01.jpg">
+            <br>
+            <p><b>2.通过Rigidbody组件移动物体。(学习这部分内容前建议先看下一节对刚体的介绍）</b>Rigidbody组件用于模拟物体的物理状态，比如物体受重力影响，物体被碰撞后的击飞等等。对于运动学刚体，它基于刚体的运动应用摩擦力。这个让你模拟刚体位于移动平台之上的情况。如果你想其他的刚体与运动学刚体交互，你需要在FixedUpdate函数中移动它。</p>
+            <p>注意：关于Rigidbody的调用均应放在FixedUpdate方法中，该方法会在每一次执行物理模拟前被调用。</p>
+            <p>2.1 Rigidbody.velocity(刚体的速度变量)。设置刚体速度可以让物体运动并且忽略静摩擦力，这会让物体快速从静止状态进入运动状态。代码如下：</p>
+            <pre><code>
+private void FixedUpdate()  
+｛  
+    cubeRigdboy.velocity = new Vector3(0, 0, 1);  
+｝  
+            </code>
+            </pre>
+            <p>2.2 Rigidbody.AddForce。给刚体添加一个方向的力，这种方式适合模拟物体在外力的作用下的运动状态。</p>
+            <pre><code>
+void FixedUpdate() ｛  
+    rigidbody.AddForce(Vector3.forward * 10);  
+｝  
+            </code>
+            </pre>
+            <p><b>3. 通过CharacterController组件移动物体。</b>CharacterController用于控制第一人称或第三人称角色的运动，使用这种方式可以模拟人的一些行为，比如限制角色爬坡的最大斜度,步伐的高度等。
+            <p>3.1 CharacterController.SimpleMove用于模拟简单运动，并且自动应用重力，返回值表示角色当前是否着地。</p>
+            <p>3.2 CharacterController.Move</p>
+            <p>模拟更复杂的运动,重力需要通过代码实现，返回值表示角色与周围的碰撞信息。</p>
+            <br>
+            <a href="A-Introducing-Unity.html"> 》》下一节 </a>
+        </div>
+        <div id="sideBarRight">
+            <div class="pan">
+                <div id="likeButton">
+                    <img id="likeImg" src="images\A\like.png" onclick="liked()">
+                </div>
+                <div id="debugButton">
+                    <a href="#debugpostion"><img src="images\A\debug.png"></a>
+                </div>
+            </div>
+        </div>
+        <div id="wordEnd">
+            <a name="debugpostion"></a>
+            <form>
+                有什么想和我们反馈的吗？
+                <br>
+                <textarea>在这里写下反馈</textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
+        <br>
+        <div class="picturesLink">
+            <p>本文基于https://gameinstitute.qq.com/community/detail/120942进行部分改写</p>
+            <p>图片来源：</p>
+            <p>图片：https://www.yuankusucai.com/117940.html</p>
+            <p>图标-Like：https://www.iconfont.cn/search/index?searchType=icon&q=%E7%82%B9%E8%B5%9E</p>
+            <p>图标-Debug：https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA&page=2&fromCollection=1&fills=&tag=
+            </p>
+        </div>
+        <br>
+        <p>&copy LSL01</p>
+    </footer>
+</body>
+
+</html>

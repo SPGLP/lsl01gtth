@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>Welcome to LSL01 GTTH</title>
+    <link rel="stylesheet" href="css\main_index.css">
+    <script type="text/javascript" src="Game_JS\game.js"></script>
+    <script type="text/javascript" src="Game_JS\nav.js"></script>
+</head>
+
+<body>
+    <a name="indexTop"></a>
+    <div id="headPicture">
+        <div id="meun1">
+            <ul>
+                <li><a href="A-What-is-Digital-Game.html">什么是电子游戏？</a></li>
+                <li><a href="A-Introducing-Unity.html">常用的开发工具</a></li>
+                <li><a href="#">基本的开发技术</a></li>
+            </ul>
+        </div>
+        <div id="meun2">
+            <ul>
+                <li><a href="#">定位与策划</a></li>
+                <li><a href="#">世界观、设定、剧情的设置</a></li>
+                <li><a href="#">关卡与难度的设置</a></li>
+                <li><a href="#">游戏配乐的设置</a></li>
+                <li><a href="#">编写、测试和发布</a></li>
+            </ul>
+        </div>
+        <div id="meun3">
+            <ul>
+                <li><a href="#">奔跑吧！扣肉！</a></li>
+                <li><a href="#">B中式程序员（字符版）</a></li>
+                <li><a href="#">CMDGAME Center</a></li>
+                <li><a href="#">推荐的游戏</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav>
+        <li><a href="#" onmouseover="changePosTG(1)" onmousedown="selectBar(1)">工具和技术</a></li>
+        <li><a href="#" onmouseover="changePosTG(2)" onmousedown="selectBar(2)">开发和流程</a></li>
+        <li><a href="#" onmouseover="changePosTG(3)" onmousedown="selectBar(3)">我的项目和推荐</a></li>
+        <li><a href="#" onmouseover="changePosTG(4)">名人堂</a></li>
+    </nav>
+    <div id="gameSpan">
+        <div id="TG">
+            <img id="TGImg" src="images\TGImg.jpg" alt="TG" onmousedown="thougtZhinSoup()">
+        </div>
+        <div id="ZhinSoup">
+            <img id="ZhinSoupImg" src="images\zhinsoupImg.jpg">
+        </div>
+        <div id="cxk">
+            <img id="cxkImg" src="images\cxkImg.jpg" alt="CXK">
+        </div>
+        <p id="scoreboard">任务完成次数：0</p>
+    </div>
+    <div id="contect">
+        <div class="subC">
+            <div class="news">
+                <p class="newsP">新闻</p>
+                <ul>
+                    <li><a href="https://www.ithome.com/0/656/767.htm">原神3.3即将发布</a></li>
+                    <li><a href="http://opinion.people.com.cn/n1/2022/1116/c1003-32567540.html">人民财评：深度挖掘电子游戏产业价值机不可失</a></li>
+                    <li><a href="https://blog.unity.com/cn/news/get-your-game-on-at-unite-2022">携你的游戏一起参加Unite 2022</a></li>
+                    <li><a href="https://www.sohu.com/a/608726426_99964837">TGA 2022提名阵容公布，最佳游戏竞争白热化！</a></li>
+                </ul>
+            </div>
+            <div class="announcement">
+                <p class="announcementP">公告</p>
+                <ul>
+                    <li><a href="#indexTop">LSL01 Game Technology Tutorial Hub 建站成功</a></li>
+                    <li>本站为严格会员制网站，提供以Unity为主的游戏设计教学，学完有奖励，不学完有惩罚</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="webLink">
+        <div class="linkButton" style="background-color:#454545;background-image: url('images\\unity_logo.jpg');background-size: cover;">
+            <div class="linkpad" style="background-color:#454545;color:white;">
+                <p>Unity</p>
+                <p>热门游戏引擎</p>
+            </div>
+        </div>
+        <div class="linkButton" style="background-color:#ab00d6;background-image: url('images\\VS2022_logo.jpg');background-size: cover;">
+            <div class="linkpad" style="background-color:#ab00d6;color:white;">
+                <p>VS2022</p>
+                <p>现代化IDE</p>
+            </div>
+        </div>
+        <div class="linkButton" style="background-color:#08007e;background-image: url('images\\steam_logo.jpg');background-size: cover;">
+            <div class="linkpad" style="background-color:#08007e;color:white;">
+                <p>Steam</p>
+                <p>全球最大游戏平台</p>
+            </div>
+        </div>
+        <div class="linkButton" style="background-color:#ff4a4a;background-image: url('images\\itchio_logo.jpg');background-size: cover;">
+            <div class="linkpad" style="background-color:#ff4a4a;color:white;">
+                <p>itch.io</p>
+                <p>独立游戏分发平台</p>
+            </div>
+        </div>
+        <div class="linkButton" style="background-color:#ffc800;background-image: url('images\\wegame_logo.jpg');background-size: cover;">
+            <div class="linkpad" style="background-color:#ffc800;color:white;">
+                <p>Wegame</p>
+                <p>国内游戏分发平台</p>
+            </div>
+        </div>
+    </div>
+    <div id="gamePictures">
+        <marquee style="margin-top: 30px;margin-bottom: 30px;"><h2>敬带给我们快乐的电子游戏，以及所有创造快乐的游戏制作者们  纵使前方再多严寒酷暑，愿你我不忘初心，继续创造如梦般的美好世界！</h2></marquee>
+        <div class="gamesSample">
+            <img src="images\games_sample.png">
+        </div>
+    </div>
+    <div id="bgmPan">
+        <p style="font-size: small; color:#ab00d6;">希望你会喜欢这首歌，也希望我们能 comeback kid </p>
+        <!--<embed src="//music.163.com/style/swf/widget.swf?sid=426026092&type=2&auto=1&width=320&height=66" width="340" height="86"  allowNetworking="all"></embed>-->
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=426026092&auto=1&height=66"></iframe>
+    </div>
+    <footer>
+        <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
+        <br>
+        <div class="picturesLink">
+            <p>图片来源：</p>
+            <p>图标：https://www.iconfont.cn/search/index?searchType=icon&q=%E6%BB%91%E7%A8%BD</p>
+            <p>特工穿山甲：https://www.qtvcd.com/news/b-50567.html</p>
+            <p>CXK铁山靠:http://www.meiriyixue.cn/game/cxk/index.html</p>
+            <p>偶像练习生背景图：https://xbeibeix.com/video/BV12841147XE</p>
+            <p>内容区背景图：https://wallpaperaccess.com/cyberpunk-street</p>
+            <p>魂斗罗：http://www.3dmgame.com/games/contra/</p>
+            <p>超级马里奥：http://www.chuapp.com/article/281766.html</p>
+            <p>地铁跑酷：https://www.wandoujia.com/apps/172353</p>
+            <p>LOL：http://getwallpapers.com/collection/league-of-legends-logo-wallpaper</p>
+            <p>Minecraft：https://wall.alphacoders.com/big.php?i=243340&lang=German</p>
+            <p>Cyberpunk2077：https://wallpapersden.com/cyberpunk-2077-concept-art-wallpaper/3840x2160/</p>
+            <p>gta6：https://mavink.com/explore/Gta-6-2020</p>
+            <p>植物大战僵尸：http://fashion.pconline.com.cn/article_source/187349.html</p>
+            <p>原神：https://www.3dmgame.com/tu/3742586.html</p>
+        </div>
+        <br>
+        <p>&copy LSL01</p>
+        <br>
+        <p>梦ICP备 1145141919810号</p>
+    </footer>
+    <audio id="hit" src="samples\hit.mp3" preload="auto"></audio>
+    <audio id="click" src="samples\click.mp3" preload="auto"></audio>
+</body>
+
+</html>

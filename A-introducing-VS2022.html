@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>开发工具：Visual Studio 2022 —— LSL01 GTTH</title>
+    <link rel="stylesheet" href="css\main.css">
+    <script type="text/javascript" src="Game_JS\like.js"></script>
+    <script type="text/javascript" src="Game_JS\sideBar.js"></script>
+</head>
+
+<body>
+    <img id="logo" src="images\logo.png">
+    <nav>
+        <ul>
+            <li><a href="#">名人堂</a></li>
+            <li><a href="#">我的项目和推荐</a></li>
+            <li><a href="#">开发与流程</a></li>
+            <li><a href="index.html">首页</a></li>
+        </ul>
+    </nav>
+    <div id="contect">
+        <div id="sideBarLeft">
+            <div class="pan">
+                <ul>
+                    <li><a href="A-What-is-Digital-Game.html">什么是电子游戏？</a></li>
+                    <li>
+                        <b>常用的开发工具</b>
+                        <ul>
+                            <li><a href="A-Introducing-Unity.html">Unity</a></li>
+                            <li><b>Visual Studio 2022</b></li>
+                        </ul>
+                    </li>
+                    <li>
+                        基本的开发技术
+                        <ul>
+                            <li><a href="A-basic-function.html">awake、start 和 update 方法</a></li>
+                            <li><a href="A-Object-Move.html">操控人物移动</a></li>
+                            <li><a href="#">刚体与碰撞</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="word">
+            <h1>使用 Visual Studio 2022 创造未来</h1>
+            <h5>VS2022作为目前主流IDE之一，也内置了对Unity等游戏引擎的支持，能更快捷地创作你的游戏</h5>
+            <hr>
+            <p>Microsoft Visual Studio（简称VS）是美国微软公司的开发工具包系列产品。VS是一个基本完整的开发工具集，它包括了整个软件生命周期中所需要的大部分工具，如UML工具、代码管控工具、集成开发环境(IDE)等等。所写的目标代码适用于微软支持的所有平台，包括Microsoft Windows、Windows Mobile、Windows CE、.NET Framework、.NET Compact Framework和Microsoft Silverlight 及Windows Phone。</p>
+            <p>Visual Studio是最流行的Windows平台应用程序的集成开发环境。最新版本为 Visual Studio 2022 版本，基于.NET Framework 4.8 。</p>
+            <p>1995年，微软发布了 Visual Studio 初版 (俗称 Visual Studio 4.0)。包含 Visual C++ 4.0，Visual Basic 4.0，Visual FoxPro 4.0 等多个组件。但是，由于这一代产品较老，初版的 Visual Studio 并不能很好的支持现在的新版 Windows 系统。</p>
+            <br>
+            <img src="images\A\A3_01.jpg">
+            <br>
+            <p>新的VS2022具有如下的优势：</p>
+            <p><b>高效。</b>使用 64 位 IDE 缩放以处理任何大小和复杂性的项目。 用新的 Razor 编辑器进行编码，可以跨文件进行重构。 诊断与异步操作和自动分析器的可视化效果相关的问题。</p>
+            <p><b>现代。</b>使用.NET MAUI 开发跨平台移动版和桌面版应用。 使用 Blazor 生成采用 C# 的响应式 Web UI。 在 Linux 环境中生成、调试、测试 .NET 和 C++ 应用程序。 跨 .NET 和 C++ 应用使用热重载功能。 在 Web 设计器视图中编辑正在运行的 ASP.NET 页。</p>
+            <p><b>创新。</b>由 AI 提供支持的代码完成。 使用共享编码会话实时协同工作。 克隆存储库、导航工作项以及暂存单行以进行提交。 自动设置可部署到 Azure 的 CI/CD 工作流。</p>
+            <br>
+            <img src="images\A\A3_02.png">
+            <br>
+            <p>我最开始使用微软的Visual系列的产品是Visual Basic 6.0。2020年初开始使用 Visual Studio 2019。在 Visual Studio 2022 正式版推出后，便立即选择了升级。</p>
+            <p>如果想要使用VS2022或者其它VS产品开发游戏，您需要在进行安装功能选择时把“游戏开发”勾上，并且在安装完毕后，还要在Unity的偏好设置中将编译器绑定为 Visual Studio。</p>
+            <br>
+            <img src="images\A\A3_03.png">
+            <br>
+            <br>
+            <img src="images\A\A3_04.png">
+            <br>
+            <p>当然除了VS2022外，其它的IDE甚至是编辑器都可以使用，比如同为微软开发的 Visual Studio Code 也是可以进行游戏开发的代码编写的。我目前在学校的学习也都是使用VSCODE居多。（对了，这个网站的开发也是借助的VSCODE）</p>
+            <p>还是那句话：“没有最好的，只有最适合自己的！”</p>
+            <br>
+            <a href="A-basic-function.html"> 》》下一节 </a>
+            <a href="https://visualstudio.microsoft.com/zh-hans/vs/">Visual Studio 2022 官网</a>
+        </div>
+        <div id="sideBarRight">
+            <div class="pan">
+                <div id="likeButton">
+                    <img id="likeImg" src="images\A\like.png" onclick="liked()">
+                </div>
+                <div id="debugButton">
+                    <a href="#debugpostion"><img src="images\A\debug.png"></a>
+                </div>
+            </div>
+        </div>
+        <div id="wordEnd">
+            <a name="debugpostion"></a>
+            <form>
+                有什么想和我们反馈的吗？
+                <br>
+                <textarea>在这里写下反馈</textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
+        <br>
+        <div class="picturesLink">
+            <p>图片来源：</p>
+            <p>图片：https://www.instalki.pl/aktualnosci/software/47455-visual-studio-2022-w-wersji-64-bitowej.html</p>
+            <p>https://visualstudio.microsoft.com/zh-hans/vs/</p>
+            <p>https://blog.csdn.net/qq_45069481/article/details/121439958</p>
+            <p>https://blog.csdn.net/z_johnking/article/details/120458735</p>
+            <p>图标-Like：https://www.iconfont.cn/search/index?searchType=icon&q=%E7%82%B9%E8%B5%9E</p>
+            <p>图标-Debug：https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA&page=2&fromCollection=1&fills=&tag=
+            </p>
+        </div>
+        <br>
+        <p>&copy LSL01</p>
+    </footer>
+</body>
+
+</html>
