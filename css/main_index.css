@@ -156,12 +156,9 @@ h2{
     height: 100px;
     width: 20%;
 }
-.linkPad{
-    position: relative;
-    text-align: center;
-    display: none;
-    margin-top: -30px;
-}
+
+/*鼠标滑动待制作*/
+
 #bgmPan{
     text-align: center;
     width: 100%;
