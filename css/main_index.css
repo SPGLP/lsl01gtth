@@ -151,13 +151,29 @@ h2{
     height: 100px;
     width: 100%;
 }
-.linkButton{
+.linkButton {
     float: left;
     height: 100px;
     width: 20%;
+    overflow: hidden;
+    filter: brightness(100%);
 }
-
-/*鼠标滑动待制作*/
+.linkpad {
+    position: relative;
+    filter: brightness(100%);
+    margin-top: -50px;
+    height: 50px;
+    opacity: 0;
+}
+.linkButton:hover{
+    transition: filter 0.5s linear;
+    filter: brightness(50%);
+}
+.linkButton:hover .linkpad {
+    transition: margin-top 0.5s linear, opacity 0.5s ease-out;
+    margin-top:0px;
+    opacity: 1;
+}
 
 #bgmPan{
     text-align: center;

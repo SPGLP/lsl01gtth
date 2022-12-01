@@ -62,7 +62,7 @@ function thougtZhinSoup(){
         timer2 = setInterval(function() {
             //var gameSpanHeight = document.getElementById("gameSpan").height;
             var ZhinSoup = document.getElementById("ZhinSoup");
-            var ZhinSoupHeight = document.getElementById("ZhinSoupImg").height;
+            //var ZhinSoupHeight = document.getElementById("ZhinSoupImg").height;
                 ZhinSoup.style.marginTop = parseInt(zhinSoupMoveY) + "px";
                 zhinSoupMoveY += zhinSoupStepY;
                 hit = hitCXK();
