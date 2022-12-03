@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>awake()、start() 和 update() —— LSL01 GTTH</title>
+    <title>刚体与碰撞 —— LSL01 GTTH</title>
     <link rel="stylesheet" href="css\main.css">
     <script type="text/javascript" src="Game_JS\like.js"></script>
     <script type="text/javascript" src="Game_JS\sideBar.js"></script>
@@ -13,7 +13,7 @@
         <ul>
             <li><a href="#">名人堂</a></li>
             <li><a href="#">我的项目和推荐</a></li>
-            <li><a href="#">开发与流程</a></li>
+            <li><a href="B-plan-to-make-game.html">开发与流程</a></li>
             <li><a href="index.html">首页</a></li>
         </ul>
     </nav>
@@ -32,36 +32,35 @@
                     <li>
                         <b>基本的开发技术</b>
                         <ul>
-                            <li><b>awake、start 和 update 方法</b></li>
+                            <li><a href="A-basic-function.html">awake、start 和 update 方法</a></li>
                             <li><a href="A-Object-Move.html">操控人物移动</a></li>
-                            <li><a href="#">刚体与碰撞</a></li>
+                            <li><b>刚体与碰撞</b></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
         <div id="word">
-            <h1>awake()、start() 和 update()</h1>
-            <h5>游戏脚本中常用的三个重要函数，它们分别是干嘛的呢？</h5>
+            <h1>刚体与碰撞</h1>
+            <h5>“我们有最真实的物理引擎！”</h5>
             <hr>
             <p>刚体可使游戏对象的行为方式受物理引擎控制。由此可以实现逼真碰撞和不同类型关节等行为。通过向刚体施力来操纵游戏对象产生的效果完全不同于直接调整变换__组件__。通常，不应同时操纵同一个游戏对象的刚体和变换 - 一次只能操纵其中一个。操纵变换与刚体的最大区别在于力的运用。刚体可以接受力和扭矩，但变换不能。变换可以被平移和旋转，但这与使用物理引擎不同。亲自尝试使用二者会注意到明显的差异。向刚体施加力/扭矩实际上会改变对象的变换组件位置和旋转。这就是为何应该只使用其中一个组件的原因。使用物理引擎时更改变换可能会导致碰撞和其他计算问题。必须先将刚体显式添加到游戏对象中，然后才能让刚体受到物理引擎的影响。可以从菜单中的 Components > Physics > Rigidbody 向所选对象添加刚体。现在对象已经完成物理设置；它会受到重力的影响而掉落，而且可以通过脚本来接受作用力，但可能需要添加一个__碰撞体__或关节来让对象按照期望的方式运行。()和update()是默认会生成的，应该是每次都会见到）。那么，这三个家伙是干嘛的呢？</p>
-            <p>我们先介绍start()函数</p>
-            <p>顾名思义，“开始”，这个函数是每次脚本被加载时都会被调用一次的函数，也就是说，我们可以用它来进行一些初始化的操作，比如规定角色的初始位置、存档的读取等，注意：它在脚本的运行周期中只会被调用一次，在开始的时候。</p>
-            <p>至于Update，则是在游戏执行过程中，脚本的运行周期里，被不停反复地调用，你可以把它类比为一个放在循环语句里的函数，它所执行的工作是整个游戏中最多，也是最为重要的，比如人物的移动、物品的移动、场景变化、镜头转移等的代码都要写到此函数中。</p>
-            <p>你会想，这不过就是一个循环语句而已嘛，多简单呐！但对于这个函数，我们要深入探讨的，是它的执行间隔。</p>
-            <p>所谓执行间隔，也就是这个函数每执行两次所间隔的时间，用一个大家都听过的词“帧率”，你们应该就能更明白了。是的，Update函数每次执行间隔的时间，就是所谓的“一帧”。</p>
-            <p>大家通常说的“游戏好卡呀，游戏掉帧了。”，其实就是因为电脑卡顿，导致执行Update函数的间隔增加了，游戏的属性无法及时更新，就造成了我们肉眼和体验上所见的“卡顿”。</p>
-            <p>而这个游戏帧率的多少，取决于你设备的性能，包括CPU、显卡、内存等，性能越好，运行不卡顿，自然也就不会“掉帧”了，</p>
-            <p>通常的手机游戏帧率一般在30fps，也就是一秒执行30次update函数。而电脑游戏则在60fps。</p>
+            <p>刚体实际上可以简单理解为使一个对象具有物理属性</p>
+            <p>拥有刚体属性的物体被游戏引擎的物理计算系统纳入管理的范围，这时的物体将具有如同现实世界的属性，在游戏世界中拥有重力加速度、碰撞属性、受力与相互作用的效果</p>
+            <p>当两个物体都被设置了刚体属性后，你还可以给两个物体添加碰撞体效果，这时，两个物体接触时，将会相互作用力的效果。于是，很多游戏中的一些墙壁阻挡移动的功能都可以通过设置碰撞体来实现。</p>
+            <p><b>提示</b>
+                <ul>
+                    <li>两个刚体的相对质量决定了它们相互碰撞时的反应情况。</li>
+                    <li>使一个刚体具有比另一个刚体更大的质量并不会使其在自由落体时降落得更快。要实现这一目的，请使用 Drag。</li>
+                    <li>较低的 Drag 值会让对象看起来较重。较高的值会使其看起来较轻。Drag 的典型值为 .001（实心金属块）到 10（羽毛）之间。</li>
+                    <li>如果要直接操作对象的变换组件，但仍希望获得物理效果，请附加刚体并将其设为 Kinematic。</li>
+                    <li>如果要通过变换组件移动游戏对象，但希望接收 Collision/Trigger 消息，必须将刚体附加到正在移动的对象。</li>
+                    <li>如果直接将对象的 Angular Drag 属性设置为无穷大，无法使对象停止旋转。</li>
+                </ul>
             <br>
-            <img src="images\A\A4_01.jpg">
+            <video src="images\A\A6-01.mp4" preload="auto" controls width="700px" height="400px"></video>
             <br>
-            <p>那么有什么办法可以固定帧率的吗？可惜，目前我们是无法完全没有一点误差地设置一个游戏的运行帧率的，不过，可以借用诸如FixedUpdate()函数等方法使得游戏的运行帧率尽量接近某一个值。</p>
-            <p>至于最后的awake()函数，它其实与Update()的本质是差不多的，都是在脚本被加载时先执行一遍，不过awake函数比start更高级，也就是会最先执行awake函数，随后再执行start。</p>
-            <p>整套流程下来，执行的顺序是这样的 awake() -> start() -> update()</p>
-            <p>当然，这三个只是最基本最常用的函数，还有许多不同的函数在游戏执行中发挥着不同的作用，这些，就留待大家自行发掘了。</p>
-            <br>
-            <a href="A-Object-Move.html"> 》》下一节 </a>
+            <a href="B-plan-to-make-game.html"> 》》下一节 </a>
         </div>
         <div id="sideBarRight">
             <div class="pan">
@@ -88,8 +87,7 @@
         <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
         <br>
         <div class="picturesLink">
-            <p>图片来源：</p>
-            <p>图片：https://www.yuankusucai.com/117940.html</p>
+            <p>视频来源：https://www.bilibili.com/video/BV1TZ4y1o76s/?p=98&share_source=copy_web&vd_source=ea684497ea66caac47a997e3f7e925f8</p>
             <p>图标-Like：https://www.iconfont.cn/search/index?searchType=icon&q=%E7%82%B9%E8%B5%9E</p>
             <p>图标-Debug：https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA&page=2&fromCollection=1&fills=&tag=
             </p>

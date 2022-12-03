@@ -154,10 +154,8 @@ h2{
 .linkButton {
     float: left;
     height: 100px;
-    width: 19%;
-    border: 1px solid black;
+    width: 20%;
     overflow: hidden;
-    margin-left: 10px;
 }
 .linkButton a{
     text-decoration: none;

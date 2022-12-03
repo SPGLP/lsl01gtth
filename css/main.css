@@ -157,3 +157,6 @@ code {
     display:block;
     padding: 10px;
 }
+video{
+    border: 5px double rgb(175, 0, 175);
+}
