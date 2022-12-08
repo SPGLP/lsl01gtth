@@ -61,10 +61,6 @@ nav li a {
     float: left;
 }
 
-:target {
-    display: block;
-}
-
 #contect table {
     background-color: rgba(172, 255, 47, 0.75);
     border: 5px solid rgb(100, 100, 100);
@@ -217,4 +213,8 @@ h3{
 
 #s3 {
     background-image: url("..\\images\\C\\C3-01.png");
+}
+
+:target {
+    display: block;
 }
