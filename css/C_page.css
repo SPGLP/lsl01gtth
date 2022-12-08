@@ -61,7 +61,11 @@ nav li a {
     float: left;
 }
 
-#contect div[id] {
+:target {
+    display: block;
+}
+
+#contect table {
     background-color: rgba(172, 255, 47, 0.75);
     border: 5px solid rgb(100, 100, 100);
     width: 100%;
