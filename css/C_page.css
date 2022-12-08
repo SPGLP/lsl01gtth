@@ -216,5 +216,5 @@ h3{
 }
 
 :target {
-    display: block;
+    display: block;!important
 }
