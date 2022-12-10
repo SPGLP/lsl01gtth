@@ -10,7 +10,7 @@ body {
     float: left;
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 nav {
@@ -48,9 +48,14 @@ nav li a {
 #contect {
     margin: 50px;
     border: 10px solid #3e3e3e;
-    height: 700px;
-    width: 80%;
-    overflow: hidden;
+    height: 300px;
+    width: 90%;
+    overflow:hidden;
+}
+
+.text {
+    height: 250px;
+    overflow: scroll;
 }
 
 #contect img {
@@ -162,7 +167,7 @@ table {
 
 #s1, #s2, #s3, #s4, #s5{
     float: left;
-    margin: 8px;
+    margin: 10px;
     border-radius: 10px;
     height: 100px;
     width: 17%;
@@ -194,6 +199,10 @@ h3{
     color: #858585;
 }
 
+h5{
+    color:rgb(255, 120, 163);
+}
+
 #switchBar div:hover h3{
     transition: all 0.5s;
     font-size: x-large;
@@ -203,18 +212,15 @@ h3{
     z-index: 2;
 }
 
-#s1 {
-    background-image: url("..\\images\\C\\C1-01.jpg");
-}
-
-#s2 {
-    background-image: url("..\\images\\C\\C2-01.png");
-}
-
-#s3 {
-    background-image: url("..\\images\\C\\C3-01.png");
-}
-
 :target {
-    display: block;!important
+    display: block!important ;
+}
+
+footer{
+    background-color: darkcyan;
+    color:white;
+}
+
+.picturesLink {
+    color:rgb(0 208 208);
 }
