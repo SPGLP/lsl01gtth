@@ -37,9 +37,23 @@ nav li a{
     height: 64px;
     line-height: 64px;
 }
-#contect{
-    position: relative;
+
+.introductionPan{
+    width: 70%;
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 21%;
+    margin-top: 70px;
+    padding: 10px;
 }
+
+.introductionPan img{
+    height: 200px;
+    width: 200px;
+    border: 3px double gold;
+    float: left;
+}
+
 #sideBarLeft{
     float: left;
     position: absolute;
@@ -71,38 +85,10 @@ nav li a{
         background-color:white;
     }
     to {
-        background-color: cornflowerblue;
+        background-color: rgb(241, 229, 90);
     }
 }
-#word{
-    background-color: white;
-    /*position: absolute;*/
-    padding: 20px;
-    margin-left: 21%;
-    margin-top: 64px;
-    box-shadow: 0px 5px 5px rgb(120, 120, 120);
-    border-radius: 10px;
-    width: 69%;
-}
-#word p{
-    margin-top: 30px;
-}
-#word img{
-    border: 3px double rgb(81, 0, 255);
-}
-#word a{
-    display: block;
-    margin-top:20px;
-    color: goldenrod;
-    text-decoration: none;
-}
-h5{
-    color: rgb(145, 100, 174);
-}
-hr{
-    margin: 20px;
-    width: 60%;
-}
+
 #sideBarRight{
     top: 0;
     right: 0;
@@ -116,6 +102,7 @@ hr{
     width: 64px;
 }
 .pan{
+    margin-top: 64px;
     position: fixed;
 }
 #sideBarRight .pan{
@@ -149,13 +136,4 @@ footer{
 }
 .picturesLink{
     color:rgb(0 208 208);
-}
-code {
-    background-color: black;
-    color:white;
-    display:block;
-    padding: 10px;
-}
-video{
-    border: 5px double rgb(175, 0, 175);
 }
