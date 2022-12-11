@@ -3,11 +3,21 @@
 <head>
     <title>Welcome to LSL01 GTTH</title>
     <link rel="stylesheet" href="css\main_index.css">
+    <script type="text/javascript">
+        window.onload = function() {
+            changePosCXK();
+            changeBGTimer();
+        }
+    </script>
+    <script type="text/javascript" src="Game_JS\changeBG.js"></script>
     <script type="text/javascript" src="Game_JS\game.js"></script>
     <script type="text/javascript" src="Game_JS\nav.js"></script>
 </head>
 
 <body>
+    <div id="backgroundImgPan">
+        <img id="backgroundImg" src="images\BGImg1.webp" width="100%" height="100%">
+    </div>
     <a name="indexTop"></a>
     <div id="headPicture">
         <div id="meun1">
@@ -78,30 +88,35 @@
                 <p>Unity</p>
                 <p>热门游戏引擎</p>
             </div></a>
+            <div class="beforeF"></div>
         </div>
         <div class="linkButton" style="background-color:#ab00d6;background-image: url('images\\VS2022_logo.jpg');background-size: cover;">
             <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><div class="linkpad" style="background-color:#ab00d6;color:white;">
                 <p>VS2022</p>
                 <p>现代化IDE</p>
             </div></a>
+            <div class="beforeF"></div>
         </div>
         <div class="linkButton" style="background-color:#08007e;background-image: url('images\\steam_logo.jpg');background-size: cover;">
             <a href="http://steampowered.com"><div class="linkpad" style="background-color:#08007e;color:white;">
                 <p>Steam</p>
                 <p>全球最大游戏平台</p>
             </div></a>
+            <div class="beforeF"></div>
         </div>
         <div class="linkButton" style="background-color:#ff4a4a;background-image: url('images\\itchio_logo.jpg');background-size: cover;">
             <a href="http://itch.io"><div class="linkpad" style="background-color:#ff4a4a;color:white;">
                 <p>itch.io</p>
                 <p>独立游戏分发平台</p>
             </div></a>
+            <div class="beforeF"></div>
         </div>
         <div class="linkButton" style="background-color:#ffc800;background-image: url('images\\wegame_logo.jpg');background-size: cover;">
             <a href="https://www.wegame.com.cn"><div class="linkpad" style="background-color:#ffc800;color:white;">
                 <p>Wegame</p>
                 <p>国内游戏分发平台</p>
             </div></a>
+            <div class="beforeF"></div>
         </div>
     </div>
     <div id="gamePictures">
@@ -118,7 +133,7 @@
     </div>
     <br>
     <footer>
-        <p align="center">| <a href="#" onclick="javascript:window.external.addFavorite('https://spglp.github.io/Endwork-FristEnd/','LSL01 Game Technology Tutorial Hub')" title="收藏本站到收藏夹">收藏本站</a> | 联系我们 | 开源社区 | </p>
+        <p align="center">| <a href="#" onclick="javascript:window.external.addFavorite(location.href, '我的网站');">收藏本站</a> | <a href="mailto:roseliger@qq.com">联系我们</a> | <a href="http://github.com/SPGLP">开源社区</a> | </p>
         <br>
         <div class="picturesLink">
             <p>图片来源：</p>

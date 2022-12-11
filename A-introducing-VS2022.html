@@ -86,6 +86,16 @@
             <form>
                 有什么想和我们反馈的吗？
                 <br>
+                <p>反馈类型</p>
+                <select>
+                    <option>错误报告</option>
+                    <option>建议提交</option>
+                    <option>内容改进</option>
+                    <option>版权申诉</option>
+                    <option>资料提供</option>
+                    <option>其它</option>
+                </select>
+                <br>
                 <textarea>在这里写下反馈</textarea>
                 <br>
                 <input type="submit">
@@ -93,7 +103,7 @@
         </div>
     </div>
     <footer>
-        <p align="center">| 收藏本站 | 联系我们 | 开源社区 | </p>
+        <p align="center">| <a href="#" onclick="javascript:window.external.addFavorite(location.href, '我的网站');">收藏本站</a> | <a href="mailto:roseliger@qq.com">联系我们</a> | <a href="http://github.com/SPGLP">开源社区</a> | </p>
         <br>
         <div class="picturesLink">
             <p>图片来源：</p>

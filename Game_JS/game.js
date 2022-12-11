@@ -8,8 +8,6 @@ var TGpos = 0;
 var canThough = 1;
 var score = 0;
 
-window.onload = changePosCXK;
-
 function changePosCXK() {
     timer = setInterval(function () {
         var cxk = document.getElementById("cxk"); 
