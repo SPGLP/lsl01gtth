@@ -76,6 +76,22 @@ function thougtZhinSoup(){
     }
 }
 
+function jump() {
+    var cxk = document.getElementById("cxk");
+    var jumpY = 15;
+    var jumpV = 2;
+    var jumpA = 0.5;
+    timer3 = setInterval(function() {
+        jumpY -= jumpV;
+        jumpV -= jumpA;
+        cxk.style.marginTop = jumpY + 'em';
+        if(jumpY >= 15){
+            cxk.style.marginTop = "15em";
+            clearInterval(timer3);
+        }
+    },30);
+}
+
 function hitCXK(){
     var ZhinSoup = document.getElementById("ZhinSoup");
     //var ZhinSoupHeight = document.getElementById("ZhinSoupImg").height;
@@ -96,6 +112,7 @@ function hitCXK(){
     if(Math.abs(cxkLeft - ZhinSoupLeft) < 50 || Math.abs(ZhinSoupRight - cxkRight) < 50) {
         if((cxkTop - ZhinSoupBottom) < 0) {
         score++;
+        jump();
         playSounds(2);
         scoreboard.innerText = "任务完成次数：" + score;
         return 1;

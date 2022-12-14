@@ -25,7 +25,7 @@ function changeBGTimer() {
     timer = setInterval(function() {
         switch (timeNumber) {
             case 1 : backgroundImgPan.style.animationPlayState = "paused"; break;
-            case 2 : break
+            case 2 : break;
             case 3 : break;
             case 4 : backgroundImgPan.style.animationPlayState = "running"; break;
             case 5 : changeImgNumber(); timeNumber = 0; break;
