@@ -83,6 +83,7 @@ nav li a{
     color:brown;
     background-color: rgba(240, 255, 0, 0.75);
 }
+
 .newsP{
     position: relative;
     text-align: center;
@@ -286,5 +287,32 @@ footer{
     }
     to {
         background-color: #3bd1ff;
+    }
+}
+
+#bgmPan p {
+    font-size: small;
+    animation: textColorChanger 2s linear 0s infinite;
+}
+@keyframes textColorChanger {
+    0% {
+        color:#ab00d6;
+        text-shadow: 0px 0px 5px #ab00d6;
+    }
+    25% {
+        color: #0e00d6;
+        text-shadow: 0px 0px 5px #0e00d6;
+    }
+    50% {
+        color: #2bd600;
+        text-shadow: 0px 0px 5px #2bd600;
+    }
+    75%{
+        color: #d60000;
+        text-shadow: 0px 0px 5px #d60000;
+    }
+    100% {
+        color:#ab00d6;
+        text-shadow: 0px 0px 5px #ab00d6;
     }
 }
