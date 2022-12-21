@@ -72,7 +72,7 @@ function thougtZhinSoup(){
                     stepX = Math.floor(Math.random()*10) + 5;
                     clearInterval(timer2);
                 }
-        }, 30)
+        }, 30);
     }
 }
 

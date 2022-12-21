@@ -241,6 +241,7 @@ footer{
     animation: mshow 0.5s ease-out;
     animation-play-state: paused;
     animation-fill-mode: forwards;
+    overflow: hidden;
 }
 @keyframes mshow {
     from{
